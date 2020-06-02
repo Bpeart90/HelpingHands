@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     creator.associate = function (models) {
-        creator.hasMany(models.Opportunity, {
+        creator.hasMany(models.opportunity, {
             onDelete: "cascade"
         });
     };
