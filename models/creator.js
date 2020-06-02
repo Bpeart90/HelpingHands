@@ -3,8 +3,8 @@ module.exports = function (sequelize, DataTypes) {
         name: DataTypes.STRING
     });
 
-    Author.associate = function (models) {
-        Author.hasMany(models.Post, {
+    creator.associate = function (models) {
+        creator.hasMany(models.Opportunity, {
             onDelete: "cascade"
         });
     };
