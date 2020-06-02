@@ -3,38 +3,38 @@ var db = require("../models");
 module.exports = function (app) {
     app.get("/api/creator", function (req, res) {
 
-        db.Author.findAll({
+        db.creator.findAll({
             include: [db.Post]
-        }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+        }).then(function (dbCreator) {
+            res.json(dbCreator);
         });
     });
 
     app.get("/api/creator/:id", function (req, res) {
 
-        db.Author.findOne({
+        db.creator.findOne({
             where: {
                 id: req.params.id
             },
             include: [db.Post]
-        }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+        }).then(function (dbCreator) {
+            res.json(dbCreator);
         });
     });
 
     app.post("/api/creator", function (req, res) {
-        db.Author.create(req.body).then(function (dbAuthor) {
-            res.json(dbAuthor);
+        db.creator.create(req.body).then(function (dbCreator) {
+            res.json(dbCreator);
         });
     });
 
     app.delete("/api/creator/:id", function (req, res) {
-        db.Author.destroy({
+        db.creator.destroy({
             where: {
                 id: req.params.id
             }
-        }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+        }).then(function (dbCreator) {
+            res.json(dbCreator);
         });
     });
 
