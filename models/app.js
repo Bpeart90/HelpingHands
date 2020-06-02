@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
-    var organization = sequelize.define("organization", {
-        organizationName: {
+    var app = sequelize.define("app", {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -18,23 +18,22 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        areaOfNeed: {
+        interest: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        backgroundRequired: {
+        background: {
             type: DataTypes.BOOLEAN,
-            defaultValue: true
+            defaultValue: false
         }
     });
-    organization.associate = function (models) {
-        // We're saying that a Post should belong to an Author
-        // A Post can't be created without an Author due to the foreign key constraint
-        organization.belongsTo(models.creator, {
+    app.associate = function (models) {
+
+        app.belongsTo(models.volunteer, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
-    return organization;
+    return app;
 }
