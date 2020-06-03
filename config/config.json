@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "@Jordan2814",
+        "password": "",
         "database": "volunteer",
         "host": "127.0.0.1",
         "port": 3306,
