@@ -1,5 +1,7 @@
 var express = require("express");
+var session = require("express-session");
 
+var passport = require("./config/passport");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -15,11 +17,19 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// require("")(app);
-// require("")(app);
-// require("")(app);
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-db.sequelize.sync({ force: true }).then(function () {
+// require("./routes/creator-routes.js")(app);
+// require("./routes/html-routes.js")(app);
+// require("./routes/opportunity-routes.js")(app);
+// require("./routes/app-routes.js")(app);
+// require("./routes/volunteer.js")(app);
+
+db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
