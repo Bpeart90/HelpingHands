@@ -4,9 +4,9 @@ module.exports = function (app) {
     app.get("/api/creator", function (req, res) {
 
         db.creator.findAll({
-            include: [db.Post]
-        }).then(function (dbCreator) {
-            res.json(dbCreator);
+            include: [db.opportunity]
+        }).then(function (dbcreator) {
+            res.json(dbcreator);
         });
     });
 
@@ -16,15 +16,15 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             },
-            include: [db.Post]
-        }).then(function (dbCreator) {
-            res.json(dbCreator);
+            include: [db.opportunity]
+        }).then(function (dbcreator) {
+            res.json(dbcreator);
         });
     });
 
     app.post("/api/creator", function (req, res) {
-        db.creator.create(req.body).then(function (dbCreator) {
-            res.json(dbCreator);
+        db.creator.create(req.body).then(function (dbcreator) {
+            res.json(dbcreator);
         });
     });
 
@@ -33,8 +33,8 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-        }).then(function (dbCreator) {
-            res.json(dbCreator);
+        }).then(function (dbcreator) {
+            res.json(dbcreator);
         });
     });
 
