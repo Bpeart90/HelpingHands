@@ -6,55 +6,55 @@ module.exports = function (app) {
     app.get("/api/opportunity", function (req, res) {
         var query = {};
         if (req.query.creator_id) {
-            query.CreatorId = req.query.creator_id;
+            query.creatorId = req.query.creator_id;
         }
 
-        db.Opportunity.findAll({
+        db.opportunity.findAll({
             where: query,
             include: [db.Creator]
-        }).then(function (dbOpportunity) {
-            res.json(dbOpportunity);
+        }).then(function (dbopportunity) {
+            res.json(dbopportunity);
         });
     });
 
 
     app.get("/api/Opportunity/:id", function (req, res) {
 
-        db.Post.findOne({
+        db.opportunity.findOne({
             where: {
                 id: req.params.id
             },
-            include: [db.Creator]
-        }).then(function (dbOpportunity) {
-            res.json(dbOpportunity);
+            include: [db.creator]
+        }).then(function (dbopportunity) {
+            res.json(dbopportunity);
         });
     });
 
     app.post("/api/opportunity", function (req, res) {
-        db.Opportunity.create(req.body).then(function (dbOpportunity) {
-            res.json(dbOpportunity);
+        db.opportunity.create(req.body).then(function (dbopportunity) {
+            res.json(dbopportunity);
         });
     });
 
     app.delete("/api/opportunity/:id", function (req, res) {
-        db.Opportunity.destroy({
+        db.opportunity.destroy({
             where: {
                 id: req.params.id
             }
-        }).then(function (dbOpportunity) {
-            res.json(dbOpportunity);
+        }).then(function (dbopportunity) {
+            res.json(dbopportunity);
         });
     });
 
     app.put("/api/opportunity", function (req, res) {
-        db.Opportunity.update(
+        db.opportunity.update(
             req.body,
             {
                 where: {
                     id: req.body.id
                 }
-            }).then(function (dbOpportunity) {
-                res.json(dbOpportunity);
+            }).then(function (dbopportunity) {
+                res.json(dbopportunity);
             });
     });
 };
