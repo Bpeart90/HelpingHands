@@ -1,19 +1,19 @@
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
+let passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 
-var db = require("../models");
+let db = require("../models");
 
 passport.use(
   new LocalStrategy(
     {
       usernameField: "email",
     },
-    function (email, password, done) {
+    (email, password, done) => {
       db.User.findOne({
         where: {
           email: email,
         },
-      }).then(function (dbUser) {
+      }).then((dbUser) => {
         if (!dbUser) {
           return done(null, false, {
             message: "Incorrect email.",
@@ -31,11 +31,11 @@ passport.use(
 );
 
 // Just consider this part boilerplate needed to make it all work
-passport.serializeUser(function (user, cb) {
+passport.serializeUser((user, cb) => {
   cb(null, user);
 });
 
-passport.deserializeUser(function (obj, cb) {
+passport.deserializeUser((obj, cb) => {
   cb(null, obj);
 });
 

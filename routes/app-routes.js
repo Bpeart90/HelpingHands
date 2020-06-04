@@ -1,9 +1,9 @@
-var db = require("../models");
+let db = require("../models");
 
 
-module.exports = function (app) {
+module.exports = (app) => {
 
-    app.get("/api/app", function (req, res) {
+    app.get("/api/app", (req, res) => {
         var query = {};
         if (req.query.volunteer_id) {
             query.volunteerId = req.query.volunteer_id;
@@ -12,48 +12,48 @@ module.exports = function (app) {
         db.app.findAll({
             where: query,
             include: [db.volunteer]
-        }).then(function (dbvolunteer) {
+        }).then((dbvolunteer) => {
             res.json(dbvolunteer);
         });
     });
 
 
-    app.get("/api/app/:id", function (req, res) {
+    app.get("/api/app/:id", (req, res) => {
 
         db.app.findOne({
             where: {
                 id: req.params.id
             },
             include: [db.volunteer]
-        }).then(function (dbapp) {
+        }).then((dbapp) => {
             res.json(dbapp);
         });
     });
 
-    app.post("/api/app", function (req, res) {
-        db.app.create(req.body).then(function (dbapp) {
+    app.post("/api/app", (req, res) => {
+        db.app.create(req.body).then((dbapp) => {
             res.json(dbapp);
         });
     });
 
-    app.delete("/api/app/:id", function (req, res) {
+    app.delete("/api/app/:id", (req, res) => {
         db.app.destroy({
             where: {
                 id: req.params.id
             }
-        }).then(function (dbapp) {
+        }).then((dbapp) => {
             res.json(dbapp);
         });
     });
 
-    app.put("/api/opportunity", function (req, res) {
+    app.put("/api/opportunity", (req, res) => {
         db.app.update(
             req.body,
             {
                 where: {
                     id: req.body.id
                 }
-            }).then(function (dbapp) {
+            }).then((dbapp) => {
                 res.json(dbapp);
             });
     });

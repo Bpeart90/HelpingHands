@@ -1,5 +1,5 @@
-module.exports = function (sequelize, DataTypes) {
-    var opportunity = sequelize.define("opportunity", {
+module.exports = (sequelize, DataTypes) => {
+    let opportunity = sequelize.define("opportunity", {
         organizationName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: true
         }
     });
-    opportunity.associate = function (models) {
+    opportunity.associate = (models) => {
 
         opportunity.belongsTo(models.creator, {
             foreignKey: {
