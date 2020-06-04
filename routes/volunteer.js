@@ -36,6 +36,5 @@ module.exports = (app) => {
         }).then((dbvolunteer) => {
             res.json(dbvolunteer);
         });
-    });
-
+  });
 };
