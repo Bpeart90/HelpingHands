@@ -1,9 +1,9 @@
-module.exports = function (sequelize, DataTypes) {
-    var creator = sequelize.define("creator", {
+module.exports = (sequelize, DataTypes) => {
+    let creator = sequelize.define("creator", {
         name: DataTypes.STRING
     });
 
-    creator.associate = function (models) {
+    creator.associate = (models) => {
         creator.hasMany(models.opportunity, {
             onDelete: "cascade"
         });

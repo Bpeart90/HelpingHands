@@ -1,5 +1,5 @@
-module.exports = function (sequelize, DataTypes) {
-    var app = sequelize.define("app", {
+module.exports = (sequelize, DataTypes) => {
+    let app = sequelize.define("app", {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: false
         }
     });
-    app.associate = function (models) {
+    app.associate = (models) => {
 
         app.belongsTo(models.volunteer, {
             foreignKey: {
