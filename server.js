@@ -7,6 +7,7 @@ let passport = require("./config/passport");
 let app = express();
 let PORT = process.env.PORT || 5000;
 
+// Set Handlebars.
 const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
