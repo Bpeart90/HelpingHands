@@ -7,6 +7,10 @@ let passport = require("./config/passport");
 let app = express();
 let PORT = process.env.PORT || 5000;
 
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 // Requiring our models for syncing
 let db = require("./models");
 
@@ -23,14 +27,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// require("./routes/creator-routes.js")(app);
-// require("./routes/html-routes.js")(app);
-// require("./routes/opportunity-routes.js")(app);
-// require("./routes/app-routes.js")(app);
-// require("./routes/volunteer.js")(app);
+require("./routes/creator-routes.js")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/opportunity-routes.js")(app);
+require("./routes/app-routes.js")(app);
+require("./routes/volunteer.js")(app);
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
-        console.log("App listening on PORT " + PORT);
+    console.log("App listening on PORT " + PORT);
   });
 });
