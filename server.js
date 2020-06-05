@@ -31,7 +31,6 @@ app.use(passport.session());
 require("./routes/creator-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/opportunity-routes.js")(app);
-require("./routes/app-routes.js")(app);
 require("./routes/volunteer.js")(app);
 
 db.sequelize.sync().then(() => {
