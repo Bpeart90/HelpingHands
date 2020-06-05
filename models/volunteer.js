@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     volunteer.associate = (models) => {
-        volunteer.hasMany(models.app, {
+        volunteer.hasMany(models.oppportunity, {
             onDelete: "cascade"
         });
     };

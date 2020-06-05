@@ -4,7 +4,7 @@ module.exports = (app) => {
     app.get("/api/volunteer", (req, res) => {
 
         db.volunteer.findAll({
-            include: [db.app]
+            include: [db.opportunity]
         }).then((dbvolunteer) => {
             res.json(dbvolunteer);
         });
@@ -16,7 +16,7 @@ module.exports = (app) => {
             where: {
                 id: req.params.id
             },
-            include: [db.app]
+            include: [db.opportunity]
         }).then((dbvolunteer) => {
             res.json(dbvolunteer);
         });
@@ -36,5 +36,5 @@ module.exports = (app) => {
         }).then((dbvolunteer) => {
             res.json(dbvolunteer);
         });
-  });
+    });
 };

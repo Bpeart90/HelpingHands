@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     let opportunity = sequelize.define("opportunity", {
-        organizationName: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -30,6 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     opportunity.associate = (models) => {
 
         opportunity.belongsTo(models.creator, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+
+        opportunity.belongsTo(models.volunteer, {
             foreignKey: {
                 allowNull: false
             }

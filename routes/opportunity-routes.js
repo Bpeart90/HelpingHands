@@ -11,7 +11,7 @@ module.exports = (app) => {
 
         db.opportunity.findAll({
             where: query,
-            include: [db.Creator]
+            include: [db.Creator, db.volunteer]
         }).then((dbopportunity) => {
             res.json(dbopportunity);
         });
@@ -24,7 +24,7 @@ module.exports = (app) => {
             where: {
                 id: req.params.id
             },
-            include: [db.creator]
+            include: [db.creator, db.volunteer]
         }).then((dbopportunity) => {
             res.json(dbopportunity);
         });
