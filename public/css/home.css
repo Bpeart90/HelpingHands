@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body { 
+  background-image: url("../images/volcover.jpg");
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+.rounded-circle {
+  height: 80px;
+  width: 80px;
+}
+.navbar {
+  padding: 0.8rem;
+}
+.navbar-nav li {
+  padding-right: 20px;
+}
+.nav-link {
+  font-size: 1.1em !important;
+}
+.carousel-inner img {
+  width: 70%;
+  height: 650px;
+}
+.carousel-caption {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+}
+.carousel-caption h1 {
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px #000;
+}
+.carousel-caption h3 {
+  font-size: 200%;
+  font-weight: 500;
+  text-shadow: 1px 1px 15px #000;
+  padding-bottom: 1rem;
+}
+.btn-outline-danger {
+  background-color: #d5d5d5;
+}
+.jumbotron {
+  padding: 1rem;
+  border-radius: 0;
+  width: 100%;
+  margin: 0;
+}
+.padding {
+  padding-bottom: 2rem;
+}
+.welcome {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.welcome hr {
+  border-top: 2px solid darkgrey;
+  width: 100%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+.social a {
+  font-size: 4.5em;
+  padding: 3rem;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-twitter {
+  color: #00aced;
+}
+.fa-instagram {
+  color: #bc2a8d;
+}
+.fa-youtube {
+  color: #bb0000;
+} 
+.fa-facebook:hover,
+.fa-twitter:hover,
+.fa-instagram:hover,
+.fa-youtube:hover {
+color: #d5d5d5;
+}
+footer {
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+}
+hr.light {
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+footer a {
+  color: #d5d5d5;
+}
+hr.light-100 {
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+/* ---Media Queries--- */
+@media (max-width: 992px) {
+  .social a {
+    font-size: 4em;
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .carousel-caption {
+    top: 40%;
+  }
+  .carousel-caption h1 {
+    font-size: 250%;
+  }
+  .carousel-caption h3 {
+    font-size: 120%;
+    font-weight: 350;
+    padding-bottom: .2rem;
+  }
+  .carousel-caption .btn {
+    font-size: 95%;
+    padding: 8px 14px;
+  }
+  .display-4 {
+    font-size: 200%;
+  }
+  .social a {
+    font-size: 2.5em;
+    padding: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .carousel-caption {
+    top: 40%;
+  }
+  .carousel-caption h1 {
+    font-size: 150%;
+  }
+  .carousel-caption h3 {
+    font-size: 100%;
+  }
+  .carousel-caption .btn {
+    font-size: 85%;
+    padding: 4px 8px;
+  }
+  .carousel-indicators {
+    display: none;
+  }
+  .display-4 {
+    font-size: 120%;
+  }
+  .social a {
+    font-size: 2em;
+    padding: .7rem;
+  }
+}
+/* Signup Form CSS */
+/*add full-width input fields*/ 
+input[type=text], 
+input[type=password] { 
+    width: 100%; 
+    padding: 12px 20px; 
+    margin: 8px 0; 
+    display: inline-block; 
+    border: 2px solid #ccc; 
+    box-sizing: border-box; 
+} 
+/* set a style for all buttons*/ 
+button { 
+    background-color: green; 
+    color: white; 
+    padding: 14px 20px; 
+    margin: 8px 0; 
+    cursor: pointer; 
+    /* width: 100%;  */
+} 
+.signup-btn {
+  text-align: center;
+  margin: auto;
+  /* position: fixed; */
+  display: flex;
+  display: grid;
+}
+/*set styles for the cancel button*/ 
+.cancelbtn { 
+    padding: 14px 20px; 
+    background-color: #FF2E00; 
+} 
+/*float cancel and signup buttons and add an equal width*/ 
+.cancelbtn, 
+.signupbtn { 
+    float: left; 
+    width: 50% 
+} 
+/*add padding to container elements*/ 
+.container { 
+    padding: 16px; 
+} 
+/*define the modal’s background*/ 
+  
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding-top: 60px; 
+} 
+/*define the modal-content background*/ 
+  
+.modal-content { 
+    background-color: #fefefe; 
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888; 
+    width: 80%; 
+} 
+/*define the close button*/ 
+  
+.close { 
+    position: absolute; 
+    right: 35px; 
+    top: 15px; 
+    color: #000; 
+    font-size: 40px; 
+    font-weight: bold; 
+} 
+/*define the close hover and focus effects*/ 
+  
+.close:hover, 
+.close:focus { 
+    color: red; 
+    cursor: pointer; 
+} 
+  
+.clearfix::after { 
+    content: ""; 
+    clear: both; 
+    display: table; 
+} 
+  
+@media screen and (max-width: 300px) { 
+    .cancelbtn, 
+    .signupbtn { 
+        width: 100%; 
+    } 
+} 

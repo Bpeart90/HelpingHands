@@ -1,48 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+{{> header }}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center"> Register Here!</h1>
+            <!--Step 1:Adding HTML-->
+            <button class="signup-btn" onclick="document.getElementById('id01').style.display='block'"
+                style="width:auto;">Sign
+                Up</button>
 
-<head>
-    <title>Sign Up</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="stylesheets/style.css" rel="stylesheet">
-</head>
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">×</span>
+                <form class="modal-content animate">
+                    <div class="container">
+                        <label><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" id="email-input" name="email" required>
 
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" id="password-input" name="psw" required>
+
+                        {{!-- <label><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                        <input type="checkbox"> Remember me
+                        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> --}}
+
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel</button>
+                            <button type="submit" class="signupbtn">Sign Up</button>
+                        </div
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Signup <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index">Search</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                </div>
-            </div>
-        </nav> -->
-    </header>
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -55,19 +42,26 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="password-input" placeholder="Password">
+
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
                 </form>
-                <!-- <br /> -->
-                <button type="button" class="background-color: gray;" class="btn btn-link">Or login <a
-                        href="/login">here</a></button>
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/signup.js"></script>
-
-</body>
-
-</html>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{{> footer }}

@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="stylesheets/style.css" rel="stylesheet">
-</head>
-
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+<header>
+    <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="/images/helpinghand.jpg" class="rounded-circle">
+                HelpingHands</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Signup <span class="sr-only">(current)</span></a>
                     </li>
@@ -35,39 +23,69 @@
                     </li>
                 </ul>
             </div>
-        </nav>
-        <!-- <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2>Login Form</h2>
+            <form class="form-inline">
+                <div class="form-group mr-2">
+                    <label class="sr-only" for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
+                <div class="form-group mr-2">
+                    <label class="sr-only" for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="form-group mr-2">
+                    <label><input type="checkbox" class="mr-1"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+            {{!-- <form class="login" style="background-color:gray;">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="email-input" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password-input" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <!-- <br /> -->
+            <button type="button" class="background-color: gray;" class="btn btn-link">Or sign up <a
+                    href="/">here</a></button> --}}
+        </div>
+    </div>
+</div>
+{{!-- Footer --}}
+<footer>
+    <div class="container-fluid padding">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <hr class="light">
+                <h2>Contact</h2>
+                <hr class="light">
+                <p>555-555-5555</p>
+                <p>email@email.com</p>
+                <p>100 Philly Ave</p>
+                <p>Philly, PA, 11111</p>
             </div>
-        </nav> -->
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Login Form</h2>
-                <form class="login" style="background-color:gray;">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="email-input" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-input" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-                <!-- <br /> -->
-                <button type="button" class="background-color: gray;" class="btn btn-link">Or sign up <a
-                        href="/">here</a></button>
+            <div class="col-md-6">
+                <hr class="light">
+                <h2>Our Hours</h5>
+                    <hr class="light">
+                    <p>M-F: 9AM - 5PM</p>
+                    <p>Sat: 10AM - 2PM</p>
+                    <p>Sun: Closed</p>
+            </div>
+            <div class="col-12">
+                <hr class="light-100">
+                <h5>&copy; helpinghands.com</h5>
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
-
-</body>
-
-</html>
+</footer>
