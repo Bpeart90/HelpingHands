@@ -1,5 +1,7 @@
+const bcrypt = require("bcrypt");
+
 module.exports = (sequelize, DataTypes) => {
-    let volunteer = sequelize.define("volunteer", {
+    let coordinator = sequelize.define("coordinator", {
         email: DataTypes.STRING,
         password: DataTypes.STRING,
     }, {
@@ -14,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    volunteer.associate = (models) => {
-        volunteer.hasMany(models.opportunity, {
+    coordinator.associate = (models) => {
+        coordinator.hasMany(models.opportunity, {
             onDelete: "cascade"
         });
     };
 
-    return volunteer;
+    return coordinator;
 };

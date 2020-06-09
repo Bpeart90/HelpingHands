@@ -19,49 +19,22 @@
                         <label><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" id="password-input" name="psw" required>
 
-                        {{!-- <label><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                        <input type="checkbox"> Remember me
-                        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> --}}
-
+                        <div class="form-group">
+                            <label for="role">Role</label><br>
+                            <input type="radio" id="radio-1" name="role" value="volunteer" checked> volunteer<br>
+                            <input type="radio" id="radio-2" name="role" value="coordinator"> coordinator
+                        </div>
                         <div class="clearfix">
                             <button type="button" onclick="document.getElementById('id01').style.display='none'"
                                 class="cancelbtn">Cancel</button>
                             <button type="submit" class="signupbtn">Sign Up</button>
-                        </div
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Sign Up Form</h2>
-                <form class="login" style="background-color:gray;">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="email-input" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-input" placeholder="Password">
-
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 {{> footer }}

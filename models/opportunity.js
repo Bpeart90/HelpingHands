@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     });
     opportunity.associate = (models) => {
 
-        opportunity.belongsTo(models.creator, {
+        opportunity.belongsTo(models.coordinator, {
             foreignKey: {
                 allowNull: false
             }

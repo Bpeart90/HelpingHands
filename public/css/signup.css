@@ -104,7 +104,7 @@
     background-color: #3f3f3f;
     color: #d5d5d5;
     padding-top: 2rem;
-    /* position: absolute; */
+    position: absolute;
     bottom: 0;
     width: 100%;
   }
