@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Bpeart90/project2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.1",

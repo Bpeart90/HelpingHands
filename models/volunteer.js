@@ -1,21 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
   let volunteer = sequelize.define("volunteer", {
-    volunteer_email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        len: [3, 40],
-        isEmail: true,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+  }, {
+    freezeTableName: true,
+    instanceMethods: {
+      generateHash(password) {
+        return bcrypt.hash(password, bcrypt.genSaltSync(8));
       },
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8, 16],
-      },
-    },
+      validPassword(password) {
+        return bcrypt.compare(password, this.password);
+      }
+    }
   });
 
   volunteer.associate = (models) => {
