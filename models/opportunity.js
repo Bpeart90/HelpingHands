@@ -27,13 +27,13 @@ module.exports = (sequelize, DataTypes) => {
   opportunity.associate = (models) => {
     opportunity.belongsTo(models.coordinator, {
       foreignKey: {
-        allowNull: false,
+        allowNull: true,
       },
     });
 
     opportunity.belongsTo(models.volunteer, {
       foreignKey: {
-        allowNull: false,
+        allowNull: true,
       },
     });
   };
