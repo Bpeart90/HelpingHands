@@ -9,30 +9,32 @@ passport.use(
       usernameField: "email",
     },
     (email, password, done) => {
-      db.User.findOne({
-        where: {
-          email: email,
-        },
-      }).then((dbUser) => {
-        if (!dbUser) {
-          return done(null, false, {
-            message: "Incorrect email.",
-          });
-        } else if (!dbUser.validPassword(password)) {
-          return done(null, false, {
-            message: "Incorrect password.",
-          });
-        }
-        // If none of the above, return the user
-        return done(null, dbUser);
-      });
+      db.volunteer
+        .findOne({
+          where: {
+            email: email,
+          },
+        })
+        .then((dbvolunteer) => {
+          if (!dbvolunteer) {
+            return done(null, false, {
+              message: "Incorrect email.",
+            });
+          } else if (!dbvolunteer.validPassword(password)) {
+            return done(null, false, {
+              message: "Incorrect password.",
+            });
+          }
+          // If none of the above, return the user
+          return done(null, dbUser);
+        });
     }
   )
 );
 
 // Just consider this part boilerplate needed to make it all work
-passport.serializeUser((user, cb) => {
-  cb(null, user);
+passport.serializeUser((volunteer, cb) => {
+  cb(null, volunteer);
 });
 
 passport.deserializeUser((obj, cb) => {

@@ -38,7 +38,6 @@ $(document).ready(() => {
       number: number,
       email: email,
       areaOfNeed: areaOfNeed,
-      volunteerId: volunteerId,
     });
     location.reload();
   }
