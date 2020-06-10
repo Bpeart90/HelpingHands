@@ -28,8 +28,8 @@ body {
   font-size: 1.1em !important;
 }
 .carousel-inner img {
-  width: 70%;
-  height: 650px;
+  width: 60%;
+  height: 60%;
 }
 .carousel-caption {
   position: absolute;
