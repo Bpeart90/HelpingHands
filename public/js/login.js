@@ -1,8 +1,8 @@
 $(document).ready(() => {
   // Getting references to our form and inputs
-  let loginForm = $("form.login");
-  let emailInput = $("input#email-input");
-  let passwordInput = $("input#password-input");
+  let loginForm = $("#login-form");
+  let emailInput = $("#inputEmail");
+  let passwordInput = $("#inputPassword");
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", (event) => {
@@ -25,11 +25,11 @@ $(document).ready(() => {
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
     $.post("/api/volunteer", {
-      email: email,
-      password: password,
+      email,
+      password
     })
       .then(() => {
-        window.location.replace("/index");
+        window.location.replace("/api/opportunity");
         // If there's an error, log the error
       })
       .catch((err) => {

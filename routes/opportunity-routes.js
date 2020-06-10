@@ -6,25 +6,26 @@ module.exports = (app) => {
     app.get("/api/opportunity", (req, res) => {
         var query = {};
         if (req.query.creator_id) {
-            query.creatorId = req.query.creator_id;
+            query.coordinatorId = req.query.coordinator_id;
         }
 
         db.opportunity.findAll({
             where: query,
-            include: [db.Creator, db.volunteer]
+            include: [db.coordinator, db.volunteer]
         }).then((dbopportunity) => {
-            res.json(dbopportunity);
+            // console.log(dbopportunity);
+            res.render("opportunity", { opportunities: dbopportunity.dataValues });
         });
     });
 
 
-    app.get("/api/Opportunity/:id", (req, res) => {
+    app.get("/api/opportunity/:id", (req, res) => {
 
         db.opportunity.findOne({
             where: {
                 id: req.params.id
             },
-            include: [db.creator, db.volunteer]
+            include: [db.coordinator, db.volunteer]
         }).then((dbopportunity) => {
             res.json(dbopportunity);
         });
