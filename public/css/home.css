@@ -203,6 +203,13 @@ button {
   padding: 14px 20px;
   background-color: #ff2e00;
 }
+.opportunity-btn {
+  text-align: center;
+  margin: auto;
+  /* position: fixed; */
+  display: flex;
+  display: grid;
+}
 /*float cancel and signup buttons and add an equal width*/
 .cancelbtn,
 .signupbtn {
