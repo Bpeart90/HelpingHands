@@ -10,7 +10,13 @@
             </form>
             <ul id="opp-list">
                 {{#each opportunities }}
-                <li>{{ this.name }}</li>
+                <li>
+                    <ul>
+                        <li>{{ this.name}}</li>
+                        <li>{{this.number}}</li>
+                        <li>{{this.email}}</li>
+                    </ul>
+                </li>
                 {{/each}}
             </ul>
         </div>
