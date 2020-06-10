@@ -24,12 +24,12 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/opportunity", function (req, res) {
-    res.render("opportunity", {
-      title: "opportunity Page",
-      style: "home.css",
-    });
-  });
+  // app.get("/opportunity", function (req, res) {
+  //   res.render("opportunity", {
+  //     title: "Opportunity Page",
+  //     style: "home.css",
+  //   });
+  // });
   // app.get("/logout", function (req, res){
   //   res.render("logout", {title: Logout})
   // })

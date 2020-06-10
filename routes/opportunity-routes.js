@@ -16,7 +16,11 @@ module.exports = (app) => {
       })
       .then((dbopportunity) => {
         console.log(dbopportunity);
-        res.render("opportunity", { opportunities: dbopportunity });
+        res.render("opportunity", {
+          opportunities: dbopportunity,
+          title: "Opportunity Page",
+          style: "home.css",
+        });
       });
   });
 
