@@ -1,5 +1,6 @@
 let path = require("path");
 
+
 let isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
@@ -18,7 +19,14 @@ module.exports = function (app) {
   })
 
   app.get("/login", function (req, res) {
-    res.render("login", { title: "Login Page" })
+    res.render("login", {
+      title: "Login Page",
+      style: "home.css",
+    })
   })
 
+
+  // app.get("/logout", function (req, res){
+  //   res.render("logout", {title: Logout})
+  // })
 };

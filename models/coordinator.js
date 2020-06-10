@@ -2,11 +2,11 @@ const bcrypt = require("bcrypt");
 
 module.exports = (sequelize, DataTypes) => {
     let coordinator = sequelize.define("coordinator", {
-        name: DataTypes.STRING,
-        role: {
-            Type: DataTypes.BOOLEAN,
-            defualtValue: false
-        },
+        // name: DataTypes.STRING,
+        // role: {
+        //     Type: DataTypes.BOOLEAN,
+        //     defualtValue: false
+        // },
         email: DataTypes.STRING,
         password: DataTypes.STRING,
     }, {

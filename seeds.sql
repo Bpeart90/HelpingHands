@@ -1,8 +1,8 @@
-INSERT INTO volunteer.creators
+INSERT INTO volunteer.coordinators
     (id, name, createdAt, updatedAt)
 VALUES
     (1, 'Soup Kitchen', 0 , 0 );
-INSERT INTO volunteer.creators
+INSERT INTO volunteer.coordinators
     (id, name, createdAt, updatedAt)
 VALUES
     (2, 'Litter Cleanup', 0 , 0 );
