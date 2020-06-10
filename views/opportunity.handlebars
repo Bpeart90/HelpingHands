@@ -2,28 +2,29 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3">
-            <h2>Welcome! <span class="member-name"></span></h2>
-            <h2>Start your search to Volunteer</h2>
-            <form class="form-inline md-form mr-auto mb-4">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-            </form>
-            <ul id="opp-list">
-                {{#each opportunities }}
-                <ul>
-                    <table>
-                        <td>{{ this.name}}</td>
-                        <td> | </td>
-                        <td>{{this.number}}</td>
-                        <td> | </td>
-                        <td>{{this.email}}</td>
-                        <td> | </td>
-                        <td>{{this.areaOfNeed}}</td>
-                    </table>
-                    <br>
-                </ul>
-                {{/each}}
-            </ul>
+            <h4>Welcome! <span class="member-name"></span></h2>
+                <h4>Start your search to Volunteer</h2>
+                    <form class="form-inline md-form mr-auto mb-4">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+                    </form>
+                    <h2> Opportunites Available!</h2>
+                    <ul id="opp-list">
+                        {{#each opportunities }}
+                        <ul>
+                            <table>
+                                <td>{{ this.name}}</td>
+                                <td> | </td>
+                                <td>{{this.number}}</td>
+                                <td> | </td>
+                                <td>{{this.email}}</td>
+                                <td> | </td>
+                                <td>{{this.areaOfNeed}}</td>
+                            </table>
+                            <br>
+                        </ul>
+                        {{/each}}
+                    </ul>
         </div>
     </div>
 </div>
