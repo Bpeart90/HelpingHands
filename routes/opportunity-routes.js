@@ -1,20 +1,21 @@
 let db = require("../models");
-
+const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 module.exports = (app) => {
 
     app.get("/api/opportunity", (req, res) => {
         var query = {};
-        if (req.query.creator_id) {
+        if (req.query.coordinator_id) {
             query.coordinatorId = req.query.coordinator_id;
         }
 
         db.opportunity.findAll({
-            where: query,
-            include: [db.coordinator, db.volunteer]
+            raw: true
+            // where: query,
+            // include: [db.coordinator, db.volunteer]
         }).then((dbopportunity) => {
             // console.log(dbopportunity);
-            res.render("opportunity", { opportunities: dbopportunity.dataValues });
+            res.render("opportunity", { opportunities: dbopportunity });
         });
     });
 

@@ -1,4 +1,5 @@
 let db = require("../models");
+let passport = require("../config/passport");
 
 module.exports = (app) => {
     app.get("/api/volunteer", (req, res) => {
@@ -9,7 +10,9 @@ module.exports = (app) => {
             res.json(dbvolunteer);
         });
     });
-
+    app.post("/api/login", passport.authenticate("local"), function (req, res) {
+        res.json(req.user);
+    });
     app.get("/api/volunteer/:id", (req, res) => {
 
         db.volunteer.findOne({
