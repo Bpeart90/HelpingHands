@@ -8,11 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     number: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      validate: {
-        len: [7, 15],
-      },
+      type: DataTypes.STRING,
     },
     email: {
       type: DataTypes.STRING,
