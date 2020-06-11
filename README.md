@@ -12,6 +12,8 @@ A collabrative project made for UPenn's Coding Bootcamp.
 4. [Installation](#installation)
 5. [Contributing](#contributing)
 6. [Questions](#questions)
+7. [Links](#links)
+8. [Example](#example)
 
 ### Instructions
 
@@ -39,27 +41,29 @@ A collabrative project made for UPenn's Coding Bootcamp.
 
 ### Description
 
-For users that want to volunteer in their communities but dont know where to start. This website will provide a list of opportunities that you can look at to get an idea of where you can volunteer. It will also
+For users that want to volunteer in their communities but dont know where to start. This website will provide a list of opportunities that you can look at to get an idea of where you can volunteer. It will also have the functionality of adding opportunities from a non profit.
+
+The app can be started in the CLI with typing.
 
 ```sh
 node server.js
 ```
 
-The user will be told what port the app is being served on and can go to localhost: in the web brow
+The user will be told what port the app is being served on and can go to localhost: in the web browser
 
 ### Use
 
-AS A user, I want to be able to write and save notes
+AS A volunteer, I want to be able to login to a site and see volunteer opportunities.
 
-I WANT to be able to delete notes I've written before
+I WANT to claim a opportunities for myself.
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+SO THAT I can help out my community.
 
 ### Installation
 
 Please run npm install to handle dependencies.
 
-Other dependencies that need to be installed
+Other dependencies that need to be installed will be bcrypt, bcryptjs, express, express-handlebars, express-session, inquirer, mysql2, npm, passport, passport-local, path, sequelize.
 
 ### Contributing
 
@@ -79,8 +83,8 @@ If you have an questions about the repo, open an issue or contact any of the col
 
 ### Links
 
-Heroku
+Heroku Link https://helping-hands-project-2.herokuapp.com/
 
-### Images
+### Example
 
-![Note Taker](public/assets/images/screenshot.PNG)
+![Note Taker](public/images/HelpingHand2.gif)
