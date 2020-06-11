@@ -2,7 +2,8 @@ let db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = (app) => {
-  app.get("/api/opportunity", (req, res) => {
+  app.get("/api/opportunity", isAuthenticated, (req, res) => {
+    console.log("this is the user", req.user)
     var query = {};
     if (req.query.coordinator_id) {
       query.coordinatorId = req.query.coordinator_id;
@@ -15,7 +16,7 @@ module.exports = (app) => {
         // include: [db.coordinator, db.volunteer]
       })
       .then((dbopportunity) => {
-        console.log(dbopportunity);
+        // console.log(dbopportunity);
         res.render("opportunity", {
           opportunities: dbopportunity,
           title: "Opportunity Page",

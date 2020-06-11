@@ -1,6 +1,6 @@
 let db = require("../models");
 let passport = require("../config/passport");
-
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = (app) => {
     app.get("/api/volunteer", (req, res) => {
 
@@ -13,6 +13,9 @@ module.exports = (app) => {
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
         res.json(req.user);
     });
+    app.get("api/volunteer/claimOpportunity", isAuthenticated, (req, res) => {
+        // Do something here
+    })
     app.get("/api/volunteer/:id", (req, res) => {
 
         db.volunteer.findOne({

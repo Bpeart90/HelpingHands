@@ -13,9 +13,10 @@ passport.use(
         .findOne({
           where: {
             email: email,
-          },
+          }
         })
         .then((dbvolunteer) => {
+          console.log(dbvolunteer)
           if (!dbvolunteer) {
             return done(null, false, {
               message: "Incorrect email.",
@@ -26,7 +27,7 @@ passport.use(
             });
           }
           // If none of the above, return the user
-          return done(null, dbUser);
+          return done(null, dbvolunteer);
         });
     }
   )

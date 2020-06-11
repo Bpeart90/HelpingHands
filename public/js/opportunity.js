@@ -6,6 +6,10 @@ $(document).ready(() => {
   let emailInput = $("#email-input");
   let areaInput = $("#areaOfNeed-input");
   let volunteerId = 1;
+  claimOpportunity = (id) => {
+    console.log(id)
+    //make a request to the server to assign the opportunity with the id that you passing to this user
+  }
 
   addOpportunityForm.on("click", (event) => {
     event.preventDefault();
@@ -40,24 +44,5 @@ $(document).ready(() => {
       areaOfNeed: areaOfNeed,
     });
     location.reload();
-  }
-  // This file just does a GET request to() figure out which user is logged in
-  // and updates the HTML on the page
-  // $.get("/").then((data) => {
-  //     $(".member-name").text(data.email);
-  // });
-
-  function searchOpportunity() {
-    // If role is volunteer create volunteer role
-    $.get("/api/opportunity", {
-      email: email,
-      password: password,
-    })
-      .then((data) => {
-        console.log(data);
-        // window.location.replace("/members");
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
   }
 });
