@@ -13,10 +13,10 @@ passport.use(
         .findOne({
           where: {
             email: email,
-          },
+          }
         })
         .then((dbvolunteer) => {
-          //if there is no user with the given email
+//if there is no user with the given email
           if (!dbvolunteer) {
             return (
               done(null, false),
@@ -29,6 +29,7 @@ passport.use(
               message: "Incorrect Password",
             });
           }
+          // If none of the above, return the user
           return done(null, dbvolunteer);
         });
     }

@@ -30,7 +30,5 @@ module.exports = function (app) {
   //     style: "home.css",
   //   });
   // });
-  // app.get("/logout", function (req, res){
-  //   res.render("logout", {title: Logout})
-  // })
+
 };

@@ -1,10 +1,12 @@
-let bcrypt = require("bcrypt");
+// Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
+var bcrypt = require("bcryptjs");
 
+// Creating our volunteer model
 module.exports = (sequelize, DataTypes) => {
   let volunteer = sequelize.define(
     "volunteer",
     {
-      email: {
+       email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
@@ -25,6 +27,17 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     }
+    // {
+    //   freezeTableName: true,
+    //   instanceMethods: {
+    //     generateHash(password) {
+    //       return bcrypt.hash(password, bcrypt.genSaltSync(8));
+    //     },
+    //     validPassword(password) {
+    //       return bcrypt.compare(password, this.password);
+    //     },
+    //   },
+    // }
   );
 
   volunteer.prototype.validPassword = function (password) {

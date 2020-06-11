@@ -7,22 +7,17 @@
         {{#each opportunities }}
         <div class="card w-50 border border-secondary">
             <div class="card-body">
+
                 <h5 class="card-header bg-primary text-white text-center">{{ this.name}}</h5>
                 <br>
                 <p class="card-text opp-cards">Phone number: {{this.number}}</p>
                 <p class="card-text opp-cards">Email: {{this.email}}</p>
                 <p class="card-text opp-cards">Help needed: {{this.areaOfNeed}}</p>
-                <a href="#" class="btn btn-primary">Claim</a>
+                <a href="#" onclick="claimOpportunity({{this.id}})"" class=" btn btn-primary">Claim</a>
             </div>
         </div>
         {{/each}}
     </div>
-    {{!-- <h4>Welcome! <span class="member-name"></span></h2> --}}
-    {{!-- <h4>Start your search to Volunteer</h2>
-                    <form class="form-inline md-form mr-auto mb-4">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-                    </form> --}}
     <button class="opportunity-btn btn-lg" onclick="document.getElementById('id02').style.display='block'"
         style="width:auto;">Add an Opportunity</button>
     <div id="id02" class="modal">
