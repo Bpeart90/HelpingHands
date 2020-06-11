@@ -30,7 +30,7 @@ $(document).ready(() => {
       password: password,
     })
       .then(() => {
-        window.location.replace("/api/opportunity");
+        window.location.replace("/opportunity");
         // If there's an error, log the error
       })
       .catch((err) => {

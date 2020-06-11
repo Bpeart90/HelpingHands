@@ -48,7 +48,7 @@ $(document).ready(() => {
         password: password,
       })
         .then((data) => {
-          window.location.replace("/api/opportunity");
+          window.location.replace("/login");
           // If there's an error, handle it by throwing up a bootstrap alert
         })
         .catch(handleLoginErr);
@@ -60,7 +60,7 @@ $(document).ready(() => {
       password: password,
     })
       .then((data) => {
-        window.location.replace("/api/opportunity");
+        window.location.replace("/login");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
