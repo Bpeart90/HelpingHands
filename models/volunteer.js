@@ -1,5 +1,7 @@
-let bcrypt = require("bcrypt");
+// Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
+var bcrypt = require("bcrypt");
 
+// Creating our volunteer model
 module.exports = (sequelize, DataTypes) => {
   let volunteer = sequelize.define(
     "volunteer",
