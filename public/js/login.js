@@ -7,6 +7,7 @@ $(document).ready(() => {
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", (event) => {
     event.preventDefault();
+
     let userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
@@ -24,9 +25,9 @@ $(document).ready(() => {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
-    $.post("/api/login", {
-      email,
-      password
+    $.post("/api/volunteer/login", {
+      email: email,
+      password: password,
     })
       .then(() => {
         window.location.replace("/api/opportunity");

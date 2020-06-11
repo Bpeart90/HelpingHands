@@ -8,7 +8,7 @@ passport.use(
     {
       usernameField: "email",
     },
-    (email, password, done) => {
+    function (email, password, done) {
       db.volunteer
         .findOne({
           where: {
@@ -16,29 +16,30 @@ passport.use(
           },
         })
         .then((dbvolunteer) => {
+          //if there is no user with the given email
           if (!dbvolunteer) {
-            return done(null, false, {
-              message: "Incorrect email.",
-            });
+            return (
+              done(null, false),
+              {
+                message: "Incorrect Email",
+              }
+            );
           } else if (!dbvolunteer.validPassword(password)) {
             return done(null, false, {
-              message: "Incorrect password.",
+              message: "Incorrect Password",
             });
           }
-          // If none of the above, return the user
-          return done(null, dbUser);
+          return done(null, dbvolunteer);
         });
     }
   )
 );
 
-// Just consider this part boilerplate needed to make it all work
-passport.serializeUser((volunteer, cb) => {
-  cb(null, volunteer);
+passport.serializeUser(function (user, cb) {
+  cb(null, user);
 });
 
-passport.deserializeUser((obj, cb) => {
-  cb(null, obj);
+passport.deserializeUser(function (user, cb) {
+  cb(null, user);
 });
-
 module.exports = passport;
