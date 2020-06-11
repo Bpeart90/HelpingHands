@@ -22,6 +22,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
     },
+    claimed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    claimedBy: {
+      type: DataTypes.INTEGER,
+      defaultValue: false,
+      allowNull: true,
+    }
   });
 
   opportunity.associate = (models) => {

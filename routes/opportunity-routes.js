@@ -12,14 +12,31 @@ module.exports = (app) => {
     db.opportunity
       .findAll({
         raw: true,
-        // where: query,
-        // include: [db.coordinator, db.volunteer]
       })
       .then((dbopportunity) => {
-        // console.log(dbopportunity);
         res.render("opportunity", {
           opportunities: dbopportunity,
           title: "Opportunity Page",
+          style: "home.css",
+        });
+      });
+  });
+
+  app.get("/claimedOpps", isAuthenticated, (req, res) => {
+    var query = { claimedBy: req.user.id };
+    if (req.query.coordinator_id) {
+      query.coordinatorId = req.query.coordinator_id;
+    }
+
+    db.opportunity
+      .findAll({
+        raw: true,
+        where: query,
+      })
+      .then((dbopportunity) => {
+        res.render("claimedOpps", {
+          opportunities: dbopportunity,
+          title: "Claimed",
           style: "home.css",
         });
       });
