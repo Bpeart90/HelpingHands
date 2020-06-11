@@ -2,15 +2,16 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="text-center"> Available Opportunities!</h2>
+            <h2 class="text-center"> Available Opportunities</h2>
         </div>
         {{#each opportunities }}
-        <div class="card w-50">
+        <div class="card w-50 border border-secondary">
             <div class="card-body">
-                <h5 class="card-title">{{ this.name}}</h5>
-                <p class="card-text">{{this.number}}</p>
-                <p class="card-text">{{this.email}}</p>
-                <p class="card-text">{{this.areaOfNeed}}</p>
+                <h5 class="card-header bg-primary text-white text-center">{{ this.name}}</h5>
+                <br>
+                <p class="card-text opp-cards">Phone number: {{this.number}}</p>
+                <p class="card-text opp-cards">Email: {{this.email}}</p>
+                <p class="card-text opp-cards">Help needed: {{this.areaOfNeed}}</p>
                 <a href="#" class="btn btn-primary">Claim</a>
             </div>
         </div>
