@@ -7,9 +7,9 @@ $(document).ready(() => {
   let areaInput = $("#areaOfNeed-input");
   let volunteerId = 1;
   claimOpportunity = (id) => {
-    console.log(id)
+    console.log(id);
     //make a request to the server to assign the opportunity with the id that you passing to this user
-  }
+  };
 
   addOpportunityForm.on("click", (event) => {
     event.preventDefault();
@@ -37,18 +37,19 @@ $(document).ready(() => {
   });
 
   function addOpportunity(name, number, email, areaOfNeed, volunteerId) {
-    $.post("/api/opportunity", {
+    $.post("/opportunity/api", {
       name: name,
       number: number,
       email: email,
       areaOfNeed: areaOfNeed,
+      volunteerId: volunteerId,
     });
     location.reload();
   }
-  
+
   function searchOpportunity() {
     // If role is volunteer create volunteer role
-    $.get("/api/opportunity", {
+    $.get("/opportunity", {
       email: email,
       password: password,
     })

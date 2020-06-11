@@ -2,8 +2,8 @@ let db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = (app) => {
-  app.get("/api/opportunity", isAuthenticated, (req, res) => {
-    console.log("this is the user", req.user)
+  app.get("/opportunity", isAuthenticated, (req, res) => {
+    console.log("this is the user", req.user);
     var query = {};
     if (req.query.coordinator_id) {
       query.coordinatorId = req.query.coordinator_id;
@@ -25,7 +25,7 @@ module.exports = (app) => {
       });
   });
 
-  app.get("/api/opportunity/:id", (req, res) => {
+  app.get("/opportunity/api:id", (req, res) => {
     db.opportunity
       .findOne({
         where: {
@@ -38,13 +38,13 @@ module.exports = (app) => {
       });
   });
 
-  app.post("/api/opportunity", (req, res) => {
+  app.post("/opportunity/api", (req, res) => {
     db.opportunity.create(req.body).then((dbopportunity) => {
       res.json(dbopportunity);
     });
   });
 
-  app.delete("/api/opportunity/:id", (req, res) => {
+  app.delete("/opportunity/api:id", (req, res) => {
     db.opportunity
       .destroy({
         where: {
@@ -56,7 +56,7 @@ module.exports = (app) => {
       });
   });
 
-  app.put("/api/opportunity", (req, res) => {
+  app.put("/opportunity/api", (req, res) => {
     db.opportunity
       .update(req.body, {
         where: {
