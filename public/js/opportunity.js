@@ -11,13 +11,13 @@ $(document).ready(() => {
     //make a request to the server to assign the opportunity with the id that you passing to this user
     $.ajax({
       url: "/api/volunteer/claimOpportunity",
-      type: 'PUT',
+      type: "PUT",
       data: {
         id: id,
-      }
+      },
     }).then(function (data) {
       console.log(data);
-    })
+    });
     window.location.reload();
   };
 
