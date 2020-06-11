@@ -4,8 +4,15 @@ module.exports = (sequelize, DataTypes) => {
   let volunteer = sequelize.define(
     "volunteer",
     {
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
       freezeTableName: true,
