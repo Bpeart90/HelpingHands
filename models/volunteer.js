@@ -6,8 +6,26 @@ module.exports = (sequelize, DataTypes) => {
   let volunteer = sequelize.define(
     "volunteer",
     {
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
+       email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    },
+    {
+      freezeTableName: true,
+      instanceMethods: {
+        generateHash(password) {
+          return bcrypt.hash(password, bcrypt.genSaltSync(8));
+        },
+        validPassword(password) {
+          return bcrypt.compare(password, this.password);
+        },
+      },
     }
     // {
     //   freezeTableName: true,

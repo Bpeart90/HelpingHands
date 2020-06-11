@@ -45,4 +45,17 @@ $(document).ready(() => {
     });
     location.reload();
   }
+  
+  function searchOpportunity() {
+    // If role is volunteer create volunteer role
+    $.get("/api/opportunity", {
+      email: email,
+      password: password,
+    })
+      .then((data) => {
+        // window.location.replace("/members");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(handleLoginErr);
+  }
 });
