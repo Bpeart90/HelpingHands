@@ -1,75 +1,65 @@
 {{> header}}
 <div class="container">
     <div class="row">
-        <div class="col-md-offset-3">
-            {{!-- <h4>Welcome! <span class="member-name"></span></h2> --}}
-            {{!-- <h4>Start your search to Volunteer</h2>
+        <div class="col-sm-12">
+            <h2 class="text-center"> Available Opportunities!</h2>
+        </div>
+        {{#each opportunities }}
+        <div class="card w-50">
+            <div class="card-body">
+                <h5 class="card-title">{{ this.name}}</h5>
+                <p class="card-text">{{this.number}}</p>
+                <p class="card-text">{{this.email}}</p>
+                <p class="card-text">{{this.areaOfNeed}}</p>
+                <a href="#" class="btn btn-primary">Claim</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{!-- <h4>Welcome! <span class="member-name"></span></h2> --}}
+    {{!-- <h4>Start your search to Volunteer</h2>
                     <form class="form-inline md-form mr-auto mb-4">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
                     </form> --}}
-            <h2> Opportunities Available!</h2>
-            <ul id="opp-list">
-                {{#each opportunities }}
-                <ul>
-                    <table>
-                        <td>{{ this.name}}</td>
-                        <td> | </td>
-                        <td>{{this.number}}</td>
-                        <td> | </td>
-                        <td>{{this.email}}</td>
-                        <td> | </td>
-                        <td>{{this.areaOfNeed}}</td>
-                    </table>
-                    <br>
-                </ul>
-                {{/each}}
-            </ul>
-            <button class="opportunity-btn" onclick="document.getElementById('id02').style.display='block'"
-                style="width:auto;">Add an Opportunity</button>
+    <button class="opportunity-btn btn-lg" onclick="document.getElementById('id02').style.display='block'"
+        style="width:auto;">Add an Opportunity</button>
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
+        <form class="modal-content animate">
+            <div class="container">
+                <label><b>What is the organization's name?</b></label>
+                <input type="text" placeholder="Enter Org. Name" id="name-input" name="name" required>
+                <br>
 
-            <div id="id02" class="modal">
-                <span onclick="document.getElementById('id03').style.display='none'" class="close"
-                    title="Close Modal">×</span>
-                <form class="modal-content animate">
-                    <div class="container">
-                        <label><b>What is the organization's name?</b></label>
-                        <input type="text" placeholder="Enter Org. Name" id="name-input" name="name" required>
-                        <br>
+                <label><b>What is the phone number you can be reached at?</b></label>
+                <input type="text" placeholder="Enter Phone Number" id="phoneNumber-input" name="phone" required>
+                <br>
 
-                        <label><b>What is the phone number you can be reached at?</b></label>
-                        <input type="text" placeholder="Enter Phone Number" id="phoneNumber-input" name="phone"
-                            required>
-                        <br>
+                <label><b>What is the email you can be reached at?</b></label>
+                <input type="text" placeholder="Enter Email" id="email-input" name="email" required>
+                <br>
 
-                        <label><b>What is the email you can be reached at?</b></label>
-                        <input type="text" placeholder="Enter Email" id="email-input" name="email" required>
-                        <br>
+                <label><b>What is the area of need?</b></label>
+                <input type="text" placeholder="Enter Area of Need" id="areaOfNeed-input" name="areaOfNeed" required>
+                <br>
 
-                        <label><b>What is the area of need?</b></label>
-                        <input type="text" placeholder="Enter Area of Need" id="areaOfNeed-input" name="areaOfNeed"
-                            required>
-                        <br>
+                <div class="form-group">
+                    <label for="role">Is a background check required?</label><br>
+                    <input type="radio" id="radio-1" name="backgroundNeeded" value="true" checked>
+                    Yes<br>
+                    <input type="radio" id="radio-2" name="backgroundNeeded" value="false"> No
+                </div>
 
-                        <div class="form-group">
-                            <label for="role">Is a background check required?</label><br>
-                            <input type="radio" id="radio-1" name="backgroundNeeded" value="true" checked>
-                            Yes<br>
-                            <input type="radio" id="radio-2" name="backgroundNeeded" value="false"> No
-                        </div>
-
-                        <div class="clearfix">
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                                class="cancelbtn">Cancel</button>
-                            <button type="submit" class="addOpportunitybtn">Add Opportunity</button>
-                        </div>
-                    </div>
-                </form>
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtn">Cancel</button>
+                    <button type="submit" class="addOpportunitybtn">Add Opportunity</button>
+                </div>
             </div>
-
-
-        </div>
+        </form>
     </div>
+</div>
 </div>
 
 {{>footer }}
