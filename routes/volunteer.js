@@ -39,9 +39,30 @@ module.exports = (app) => {
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
-  app.get("api/volunteer/claimOpportunity", isAuthenticated, (req, res) => {
-    // Do something here
+  app.put("/api/volunteer/claimOpportunity", isAuthenticated, (req, res) => {
+    let claimID = req.body.id;
+    let user = req.user;
+    console.log(claimID);
+    console.log(user);
+    db.opportunity
+      .update({
+        claimed: true,
+        claimedBy: user.id
+      },
+        {
+          where: {
+            id: claimID,
+          }
+        }).then(function (data) {
+          console.log(data);
+          res.json(data);
+        }).catch(function (err) {
+          console.log("error", err)
+        });
+
   });
+
+
   app.get("/api/volunteer/:id", (req, res) => {
     db.volunteer
       .findOne({

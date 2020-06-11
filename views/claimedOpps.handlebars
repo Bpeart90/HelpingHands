@@ -1,0 +1,20 @@
+{{>header}}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="text-center"> Claimed Opportunities</h2>
+        </div>
+        {{#each opportunities }}
+
+        <div class="card w-50 border border-secondary">
+            <div class="card-body">
+
+                <h5 class="card-header bg-primary text-white text-center">{{ this.name}}</h5>
+                <br>
+                <p class="card-text opp-cards">Phone number: {{this.number}}</p>
+                <p class="card-text opp-cards">Email: {{this.email}}</p>
+                <p class="card-text opp-cards">Help needed: {{this.areaOfNeed}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>

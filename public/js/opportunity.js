@@ -9,6 +9,16 @@ $(document).ready(() => {
   claimOpportunity = (id) => {
     console.log(id);
     //make a request to the server to assign the opportunity with the id that you passing to this user
+    $.ajax({
+      url: "/api/volunteer/claimOpportunity",
+      type: 'PUT',
+      data: {
+        id: id,
+      }
+    }).then(function (data) {
+      console.log(data);
+    })
+    window.location.reload();
   };
 
   addOpportunityForm.on("click", (event) => {
@@ -47,16 +57,16 @@ $(document).ready(() => {
     location.reload();
   }
 
-  function searchOpportunity() {
-    // If role is volunteer create volunteer role
-    $.get("/opportunity", {
-      email: email,
-      password: password,
-    })
-      .then((data) => {
-        // window.location.replace("/members");
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
-  }
+  // function searchOpportunity() {
+  //   // If role is volunteer create volunteer role
+  //   $.get("/opportunity", {
+  //     email: email,
+  //     password: password,
+  //   })
+  //     .then((data) => {
+  //       // window.location.replace("/members");
+  //       // If there's an error, handle it by throwing up a bootstrap alert
+  //     })
+  //     .catch(handleLoginErr);
+  // }
 });

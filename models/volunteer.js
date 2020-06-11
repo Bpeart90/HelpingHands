@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   let volunteer = sequelize.define(
     "volunteer",
     {
-       email: {
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      // claimedOpps: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: true,
+      // }
     },
     {
       freezeTableName: true,

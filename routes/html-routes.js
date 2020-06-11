@@ -23,12 +23,4 @@ module.exports = function (app) {
       style: "home.css",
     });
   });
-
-  // app.get("/opportunity", function (req, res) {
-  //   res.render("opportunity", {
-  //     title: "Opportunity Page",
-  //     style: "home.css",
-  //   });
-  // });
-
 };

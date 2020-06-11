@@ -5,6 +5,7 @@
             <h2 class="text-center"> Available Opportunities</h2>
         </div>
         {{#each opportunities }}
+        {{#unless claimed}}
         <div class="card w-50 border border-secondary">
             <div class="card-body">
 
@@ -13,9 +14,10 @@
                 <p class="card-text opp-cards">Phone number: {{this.number}}</p>
                 <p class="card-text opp-cards">Email: {{this.email}}</p>
                 <p class="card-text opp-cards">Help needed: {{this.areaOfNeed}}</p>
-                <a href="#" onclick="claimOpportunity({{this.id}})"" class=" btn btn-primary">Claim</a>
+                <a href="#" onclick="claimOpportunity({{this.id}})" class=" btn btn-primary">Claim</a>
             </div>
         </div>
+        {{/unless}}
         {{/each}}
     </div>
     <button class="opportunity-btn btn-lg" onclick="document.getElementById('id02').style.display='block'"
