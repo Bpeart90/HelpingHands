@@ -3,6 +3,46 @@
     <div class="row">
         <div class="col-sm-12">
             <h2 class="text-center"> Available Opportunities</h2>
+            <button class="opportunity-btn btn-lg" onclick="document.getElementById('id02').style.display='block'"
+                style="width:auto;">Add an Opportunity</button>
+            <div id="id02" class="modal">
+                <span onclick="document.getElementById('id03').style.display='none'" class="close"
+                    title="Close Modal">×</span>
+                <form class="modal-content animate">
+                    <div class="container">
+                        <label><b>What is the organization's name?</b></label>
+                        <input type="text" placeholder="Enter Org. Name" id="name-input" name="name" required>
+                        <br>
+
+                        <label><b>What is the phone number you can be reached at?</b></label>
+                        <input type="text" placeholder="Enter Phone Number" id="phoneNumber-input" name="phone"
+                            required>
+                        <br>
+
+                        <label><b>What is the email you can be reached at?</b></label>
+                        <input type="text" placeholder="Enter Email" id="email-input" name="email" required>
+                        <br>
+
+                        <label><b>What is the area of need?</b></label>
+                        <input type="text" placeholder="Enter Area of Need" id="areaOfNeed-input" name="areaOfNeed"
+                            required>
+                        <br>
+
+                        <div class="form-group">
+                            <label for="role">Is a background check required?</label><br>
+                            <input type="radio" id="radio-1" name="backgroundNeeded" value="true" checked>
+                            Yes<br>
+                            <input type="radio" id="radio-2" name="backgroundNeeded" value="false"> No
+                        </div>
+
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                class="cancelbtn">Cancel</button>
+                            <button type="submit" class="addOpportunitybtn">Add Opportunity</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         {{#each opportunities }}
         <div class="card w-50 border border-secondary">
@@ -18,44 +58,6 @@
         </div>
         {{/each}}
     </div>
-    <button class="opportunity-btn btn-lg" onclick="document.getElementById('id02').style.display='block'"
-        style="width:auto;">Add an Opportunity</button>
-    <div id="id02" class="modal">
-        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">×</span>
-        <form class="modal-content animate">
-            <div class="container">
-                <label><b>What is the organization's name?</b></label>
-                <input type="text" placeholder="Enter Org. Name" id="name-input" name="name" required>
-                <br>
-
-                <label><b>What is the phone number you can be reached at?</b></label>
-                <input type="text" placeholder="Enter Phone Number" id="phoneNumber-input" name="phone" required>
-                <br>
-
-                <label><b>What is the email you can be reached at?</b></label>
-                <input type="text" placeholder="Enter Email" id="email-input" name="email" required>
-                <br>
-
-                <label><b>What is the area of need?</b></label>
-                <input type="text" placeholder="Enter Area of Need" id="areaOfNeed-input" name="areaOfNeed" required>
-                <br>
-
-                <div class="form-group">
-                    <label for="role">Is a background check required?</label><br>
-                    <input type="radio" id="radio-1" name="backgroundNeeded" value="true" checked>
-                    Yes<br>
-                    <input type="radio" id="radio-2" name="backgroundNeeded" value="false"> No
-                </div>
-
-                <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                        class="cancelbtn">Cancel</button>
-                    <button type="submit" class="addOpportunitybtn">Add Opportunity</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
 </div>
 
 {{>footer }}
