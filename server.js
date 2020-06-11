@@ -33,7 +33,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/opportunity-routes.js")(app);
 require("./routes/volunteer.js")(app);
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => {
     console.log("App listening on PORT " + PORT);
   });
